@@ -1,6 +1,6 @@
 package dev.arthur.bridge_ia.model;
 
-import org.aspectj.bridge.Message;
+import java.util.List;
 
 public record ClaudeRequest(
 
