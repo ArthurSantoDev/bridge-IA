@@ -1,3 +1,7 @@
 spring:
   application:
     name: bridge-ia
+
+anthropic:
+  api-key: ${ANTHROPIC_API_KEY}
+  model: claude-sonnet-4-6
