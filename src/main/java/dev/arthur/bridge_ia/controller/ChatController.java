@@ -14,7 +14,7 @@ public class ChatController {
 
     private final ChatService chatService;
 
-    @PostMapping("/v1/messages")
+    @PostMapping
     public Flux<String> chat(@RequestBody String message) {
         return chatService.sendMessage(message);
     }
