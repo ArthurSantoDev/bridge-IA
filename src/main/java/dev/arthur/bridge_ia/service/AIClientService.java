@@ -1,6 +1,7 @@
 package dev.arthur.bridge_ia.service;
 
 import dev.arthur.bridge_ia.model.ClaudeRequest;
+import dev.arthur.bridge_ia.model.ClaudeResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
@@ -37,7 +38,7 @@ public class AIClientService {
                 .header("Content-Type", "application/json")
                 .bodyValue(request)
                 .retrieve()
-                .bodyToFlux(String.class);
+                .bodyToFlux(ClaudeResponse.class).map(claudeResponse -> claudeResponse.content().get(0).text());
 
 
 
